@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>방방곡곡 홈페이지</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">    
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#menu-toggle" id="menu-toggle">
+        <i class="fa fa-bars tooltips"></i>
+    </a>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/">
+                        홈으로
+                    </a>
+                </li>
+                <li>
+                    <a href="/main">방송 화면</a>
+                </li>
+                <li>
+                    <a href="/notice">공지사항</a>
+                </li>
+                <li>
+                    <a href="/story">여행지 신청하기</a>
+                </li>
+                <li>
+                    <a href="/review">방송 후기 남기기</a>
+                </li>
+                <li>
+                    <a href="#">크루들의 공간</a>
+                </li>
+                <li>
+                    <a href="#">지원하기</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <section id="main-content">
+            <section class="wrapper">
+                <div align='center'>
+                    <a href="admin" class="logo"><b>방방곡곡</b></a>
+                </div>
+                <div class="container">
+                    <div>
+                      <div>방송 후기 작성하기</div>
+                        <form method="post">
+                           <div>
+                             <label>제목:</label>
+                             <input class="title" type="text" name="title"/>
+                             <label>작성자:</label>
+                             <input class="name" type="text" name="name"/>  
+                           </div>
+                            <textarea style="font-size:20px;" rows="15" name="content" placeholder="방송 후기를 남겨주세요!"></textarea>
+                            <input type="submit" class="send btn-lg pull-right btn-border" style="margin-right:50px;" value="작성">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- /#page-content-wrapper -->
+        <br>
+        
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <!-- server core script -->
+    <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
+    <script>
+        (function() {
+            var getNode = function(s) {
+                    return document.querySelector(s);
+                },
+
+                title = getNode('.container form .title'),
+                content = getNode('.container form .content'),
+                send = getNode('.container form .send'),
+
+
+            try {
+                var socket = io.connect('http://127.0.0.1:8080');
+            } catch (e) {}
+            if (socket !== undefined) {
+
+                socket.on('output', function(data) {
+                    if (data.length) {
+                        for (var x = 0; x < data.length; x = x + 1) {
+                            
+                        }
+                    }
+                });
+
+                socket.on('status', function(data) {
+                    setStatus((typeof data === 'object') ? data.message : data);
+
+                    if (data.clear === true) {
+                        textarea.value = '';
+                    }
+                });
+
+
+                send.addEventListener('click', function(event) {
+                    var board_content = content.value,
+                        board_title = content.value,
+                        user_name = name.value;
+                    
+                        socket.emit('input', {
+                            board_content: board_content,
+                            board_title: board_title,
+                            user_name = name
+                        });
+                });
+            }
+
+
+        })();
+    </script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+</body>
+
+</html>

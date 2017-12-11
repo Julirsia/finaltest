@@ -74,15 +74,17 @@
                 <div class="container">
                     <div>
                       <div>자유게시판 작성하기</div>
-                        <form method="post">
                            <div>
                              <label>제목:</label>
-                             <input class="title" type="text" name="title"/>
+                             <div class="title"> <%= story[0].Story_Title %> </div>
                              <label>작성자:</label>
-                             <input class="name" type="text" name="name"/>  
+                             <div class="name"> <%= story[0].User_Name %> </div>  
                            </div>
-                            <textarea style="font-size:20px;" rows="15" name="content" placeholder="사연을 적어주세요!"></textarea>
-                            <input type="submit" class="send btn-lg pull-right btn-border" style="margin-right:50px;" value="작성">
+                            <textarea style="font-size:20px;" rows="15" name="content" placeholder="사연을 적어주세요!">
+                                <%= story[0].Story_Content %>
+                            </textarea>
+                        <form action="">
+                            <input type="submit" class="send btn-lg pull-right btn-border" style="margin-right:50px;" value="돌아가기">
                         </form>
                     </div>
                 </div>
@@ -92,9 +94,10 @@
         <br>
         
 
-
+    
     <!-- /#wrapper -->
 
+    <!-- Bootstrap core JavaScript -->
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -109,6 +112,7 @@
     <!-- Custom scripts for this page-->
     <script src="/js/sb-admin-datatables.min.js"></script>
     
+
 </body>
 
 </html>

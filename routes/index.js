@@ -20,6 +20,7 @@ router.get('/notice',function(req,res,next){
 router.get('/story',controller.story_list);
 router.get('/review',controller.review_list);
 
+router.get('/story/:id',controller.story_view);
 
 router.post('/story_write',controller.story_write);
 router.get('/story_write',function(req,res,next){

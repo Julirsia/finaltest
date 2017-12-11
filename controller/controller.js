@@ -18,6 +18,15 @@ exports.story_write=(req,res)=>{
   });
 };
 
+exports.story_view=(req,res)=>{
+  var id = req.params.id;
+  console.log(id);
+  db.query('select * from story where Story_ID = ?',[id],(err,results)=>{
+    if(err) console.log(err);
+    res.render('story_content',{story:results});
+  });
+};
+
 exports.review_list=(req,res)=>{
   db.query('select * from review',(err,results)=>{
     if(err) console.log(err);

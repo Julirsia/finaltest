@@ -27,6 +27,15 @@ exports.story_view=(req,res)=>{
   });
 };
 
+exports.review_view=(req,res)=>{
+  var id = req.params.id;
+  console.log(id);
+  db.query('select * from review where Review_ID = ?',[id],(err,results)=>{
+    if(err) console.log(err);
+    res.render('review_content',{review:results});
+  });
+};
+
 exports.review_list=(req,res)=>{
   db.query('select * from review',(err,results)=>{
     if(err) console.log(err);

@@ -68,60 +68,36 @@
         <!-- Page Content -->
         <section id="main-content">
             <section class="wrapper">
-                <div class="container-fluid">
-                    <br>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">후기을 남겨주세요</a>
-                        </li>
-                    </ol>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>번호</th>
-                                        <th>제목</th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% review.forEach((item)=>{ %>
-                                        <tr class='clickable-row'>
-                                            <td style="width:13%;">
-                                                <%= item.Review_ID %>
-                                            </td>
-                                            <td style="width:50%;">
-                                                <a href="/review/<%= item.Review_ID %>"><%= item.Review_Title %></a>
-                                            </td>
-                                            <td>
-                                                <%= item.User_Name %>
-                                            </td>
-                                            <td>
-                                                <%= new Date(item.Review_Date).toLocaleString() %>
-                                            </td>
-                                        </tr>
-                                        <%})%>
-                                </tbody>
-                            </table>
-                        </div>
+                <div align='center'>
+                    <a href="admin" class="logo"><b>방방곡곡</b></a>
+                </div>
+                <div class="container">
+                    <div>
+                      <div>후기</div>
+                           <div>
+                             <label>제목:</label>
+                             <div class="title"> <%= review[0].Review_Title %> </div>
+                             <label>작성자:</label>
+                             <div class="name"> <%= review[0].User_Name %> </div>  
+                           </div>
+                            <textarea style="font-size:20px;" rows="15" name="content" placeholder="사연을 적어주세요!">
+                                <%= review[0].Review_Content %>
+                            </textarea>
+                        <form action="">
+                            <input type="submit" class="send btn-lg pull-right btn-border" style="margin-right:50px;" value="돌아가기">
+                        </form>
                     </div>
                 </div>
-                <a class="write-btn btn" href="/review_write"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                <!--/row -->
             </section>
-             <div id="addiv"><img src="img/ad.JPG">
-        </div>
         </section>
         <!-- /#page-content-wrapper -->
         <br>
-       
         
 
-   
+    
     <!-- /#wrapper -->
 
+    <!-- Bootstrap core JavaScript -->
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -135,32 +111,7 @@
     <script src="/vendor/bootstrap/js/common-scripts.js"></script>
     <!-- Custom scripts for this page-->
     <script src="/js/sb-admin-datatables.min.js"></script>
-    <!-- Channel Plugin Scripts -->
-<script>
-  window.channelPluginSettings = {
-    "plugin_id": "73160b9b-184d-4f6f-a0b0-4f758715165c"
-  };
-  (function() {
-    var node = document.createElement('div');
-    node.id = 'ch-plugin';
-    document.body.appendChild(node);
-    var async_load = function() {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-      s.charset = 'UTF-8';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    };
-    if (window.attachEvent) {
-      window.attachEvent('onload', async_load);
-    } else {
-      window.addEventListener('load', async_load, false);
-    }
-  })();
-</script>
-<!-- End Channel Plugin -->
+    
 
 </body>
 

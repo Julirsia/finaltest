@@ -23,76 +23,86 @@
 
 <body>
     <div id="toggle-menu" class="sidebar-toggle-box">
-            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation" style="color:black"></div>
-        </div>
-        <!-- Sidebar -->
-        <aside>
-            <div id="sidebar" class="nav-collapse">
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <h3 class="centered" style="color:bisque">방방곡곡</h3>
-                    <li class="mt">
-                        <a href="/">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation" style="color:black"></div>
+    </div>
+    <!-- Sidebar -->
+    <aside>
+        <div id="sidebar" class="nav-collapse">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <h3 class="centered" style="color:bisque">방방곡곡</h3>
+                <li class="mt">
+                    <a href="/">
                             <i class="fa fa-dashboard" style="color:#20B38E"></i>
                             <span style="color:#20B38E">홈화면</span>
                         </a>
-                    </li>
-                     <li class="sub-menu">
-                        <a href="/review" style="color:yellow">
+                </li>
+                <li class="sub-menu">
+                    <a href="/review" style="color:yellow">
                             <i class="fa fa-tasks" style="color:yellow"></i>
                             <span>공지사항</span>
                         </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="/main" style="color:deeppink;">
+                </li>
+                <li class="sub-menu">
+                    <a href="/main" style="color:deeppink;">
                             <i class="fa fa-desktop" style="color:deeppink;"></i>
                             <span>방송 화면</span>
                         </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="/story" style="color:darkorange">
+                </li>
+                <li class="sub-menu">
+                    <a href="/story" style="color:darkorange">
                             <i class=" fa fa-bar-chart-o" style="color:darkorange"></i>
                             <span>여행지 신청하기</span>
                         </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="/review" style="color:darkseagreen">
+                </li>
+                <li class="sub-menu">
+                    <a href="/review" style="color:darkseagreen">
                             <i class="fa fa-tasks" style="color:darkseagreen"></i>
                             <span>후기 남기기</span>
                         </a>
-                    </li>
-                </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <section id="main-content">
+        <section class="wrapper">
+            <div align='center'>
+                <a href="admin" class="logo"><b>후기를 작성해주세요.</b></a>
             </div>
-        </aside>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <section id="main-content">
-            <section class="wrapper">
-                <div align='center'>
-                    <a href="admin" class="logo"><b>방방곡곡</b></a>
-                </div>
-                <div class="container">
+            <div class="container">
+                <div class="review_contents">
+                   <form action="">
                     <div>
-                      <div>방송 후기 작성하기</div>
-                        <form method="post">
-                           <div>
-                             <label>제목:</label>
-                             <input class="title" type="text" name="title"/>
-                             <label>작성자:</label>
-                             <input class="name" type="text" name="name"/>  
-                           </div>
-                            <textarea style="font-size:20px;" rows="15" name="content" placeholder="방송 후기를 남겨주세요!"></textarea>
-                            <input type="submit" class="send btn-lg pull-right btn-border" style="margin-right:50px;" value="작성">
-                        </form>
+                        <div>
+                            <div style="width:15%; float:left; display:inline-block;"> 제&nbsp; 목 : </div>
+                            <div style="width:85%; float:left; display:inline-block;">
+                                <input type="text" name="title">
+                            </div>
+                        </div>
+                        <div>
+                            <div style="width:15%; float:left; display:inline-block;"> 작성자 : </div>
+                            <div style="width:85%; float:left; display:inline-block;">
+                                <input type="text" name="name">
+                            </div>
+                        </div>
                     </div>
+                    <div>내용</div>
+                    <textarea style="font-size:20px;" rows="15" name="content" placeholder="사연을 적어주세요!"></textarea>
+                    <form action="/story">
+                        <input type="submit" class="send btn-lg btn-border" value="돌아가기">
+                    </form>
+                    </form>
                 </div>
-            </section>
+            </div>
         </section>
-        <!-- /#page-content-wrapper -->
-        <br>
-        
+    </section>
+    <!-- /#page-content-wrapper -->
+    <br>
 
-  
+
+
     <!-- /#wrapper -->
 
     <!-- Bootstrap core JavaScript -->
@@ -108,7 +118,7 @@
     <script src="/vendor/bootstrap/js/common-scripts.js"></script>
     <!-- Custom scripts for this page-->
     <script src="/js/sb-admin-datatables.min.js"></script>
-    
+
 
 </body>
 

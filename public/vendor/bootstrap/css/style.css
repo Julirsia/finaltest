@@ -27,6 +27,21 @@ ul li {
     list-style: none;
 }
 
+button.send{
+    margin-left:80%;
+}
+
+.text-input{
+    width:80%;
+    float:right;
+    border-radius: 3px;
+}
+
+textarea{
+    border-radius: 3px;
+    padding: 1rem;
+}
+
 a,
 a:hover,
 a:focus {

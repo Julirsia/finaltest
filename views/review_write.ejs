@@ -73,28 +73,25 @@
             </div>
             <div class="container">
                 <div class="review_contents">
-                   <form action="">
-                    <div>
+                    <form method="post">
                         <div>
-                            <div style="width:15%; float:left; display:inline-block;"> 제&nbsp; 목 : </div>
-                            <div style="width:85%; float:left; display:inline-block;">
-                                <input type="text" name="title">
+                            <div style="margin-bottom:2%;">
+                                <label for="title">제&nbsp;&nbsp;&nbsp;목 :</label>
+                                <input class="text-input" type="text" id="title" name="title" placeholder="제목을 입력하세요">
+                            </div>
+                            <div style="margin-bottom:2%;">
+                                <label for="name">작성자 :</label>
+                                <input class="text-input" type="text" id="name" name="name" placeholder="작성자 입력">
                             </div>
                         </div>
-                        <div>
-                            <div style="width:15%; float:left; display:inline-block;"> 작성자 : </div>
-                            <div style="width:85%; float:left; display:inline-block;">
-                                <input type="text" name="name">
-                            </div>
-                        </div>
-                    </div>
-                    <div>내용</div>
-                    <textarea style="font-size:20px;" rows="15" name="content" placeholder="사연을 적어주세요!"></textarea>
-                    <form action="/story">
-                        <input type="submit" class="send btn-lg btn-border" value="돌아가기">
-                    </form>
+                        <div>내용</div>
+                        <textarea style="font-size:20px;" rows="15" name="content" placeholder="사연을 적어주세요!"></textarea>
+                        <button type="submit" class="send btn-lg btn-theme04 btn-border">작성 완료</button>
                     </form>
                 </div>
+                <form action="/review">
+                    <input type="submit" class="send btn-lg btn-border" value="돌아가기">
+                </form>
             </div>
         </section>
     </section>

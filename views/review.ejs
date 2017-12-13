@@ -23,103 +23,111 @@
 
 <body>
     <div id="toggle-menu" class="sidebar-toggle-box">
-            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation" style="color:black"></div>
-        </div>
-        <!-- Sidebar -->
-        <aside>
-            <div id="sidebar" class="nav-collapse">
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <h3 class="centered" style="color:bisque">방방곡곡</h3>
-                 <li class="mt">
-                        <a href="/">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation" style="color:black"></div>
+    </div>
+    <!-- Sidebar -->
+    <aside>
+        <div id="sidebar" class="nav-collapse">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <h3 class="centered" style="color:bisque">방방곡곡</h3>
+                <li class="mt">
+                    <a href="/">
                             <i class="fa fa-dashboard" style="color:#20B38E"></i>
                             <span style="color:#20B38E">홈화면</span>
                         </a>
-                    </li>
-                     <li class="sub-menu">
-                        <a href="/review" style="color:yellow">
+                </li>
+                <li class="sub-menu">
+                    <a href="/review" style="color:yellow">
                             <i class="fa fa-tasks" style="color:yellow"></i>
                             <span>공지사항</span>
                         </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="/main" style="color:deeppink;">
+                </li>
+                <li class="sub-menu">
+                    <a href="/main" style="color:deeppink;">
                             <i class="fa fa-desktop" style="color:deeppink;"></i>
                             <span>방송 화면</span>
                         </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="/story" style="color:darkorange">
+                </li>
+                <li class="sub-menu">
+                    <a href="/story" style="color:darkorange">
                             <i class=" fa fa-bar-chart-o" style="color:darkorange"></i>
                             <span>여행지 신청하기</span>
                         </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="/review" style="color:darkseagreen">
+                </li>
+                <li class="sub-menu">
+                    <a href="/review" style="color:darkseagreen">
                             <i class="fa fa-tasks" style="color:darkseagreen"></i>
                             <span>후기 남기기</span>
                         </a>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-        <!-- /#sidebar-wrapper -->
+                </li>
+                <li class="sub-menu">
+                    <a href="#" onclick="loginout(event)" style="color:cornflowerblue">
+                            <i class="fa fa-google" aria-hidden="true"></i>
+                            <span id="AUTH_STATE" class="blue-text">(인증되지 않음)</span>
+                        </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <section id="main-content">
-            <section class="wrapper">
-                <div class="container-fluid">
-                    <br>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">후기을 남겨주세요</a>
-                        </li>
-                    </ol>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>번호</th>
-                                        <th>제목</th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
+    <!-- Page Content -->
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="container-fluid">
+                <br>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">후기을 남겨주세요</a>
+                    </li>
+                </ol>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% review.forEach((item)=>{ %>
+                                    <tr class='clickable-row'>
+                                        <td style="width:13%;">
+                                            <%= item.Review_ID %>
+                                        </td>
+                                        <td style="width:50%;">
+                                            <a href="/review/<%= item.Review_ID %>">
+                                                <%= item.Review_Title %>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <%= item.User_Name %>
+                                        </td>
+                                        <td>
+                                            <%= new Date(item.Review_Date).toLocaleString() %>
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <% review.forEach((item)=>{ %>
-                                        <tr class='clickable-row'>
-                                            <td style="width:13%;">
-                                                <%= item.Review_ID %>
-                                            </td>
-                                            <td style="width:50%;">
-                                                <a href="/review/<%= item.Review_ID %>"><%= item.Review_Title %></a>
-                                            </td>
-                                            <td>
-                                                <%= item.User_Name %>
-                                            </td>
-                                            <td>
-                                                <%= new Date(item.Review_Date).toLocaleString() %>
-                                            </td>
-                                        </tr>
-                                        <%})%>
-                                </tbody>
-                            </table>
-                        </div>
+                                    <%})%>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <a class="write-btn btn" href="/review_write"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                <!--/row -->
-            </section>
-             <div id="addiv"><img src="img/ad.JPG">
-        </div>
+            </div>
+            <a class="write-btn btn" href="/review_write"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <!--/row -->
         </section>
-        <!-- /#page-content-wrapper -->
-        <br>
-       
-        
+        <div id="addiv"><img src="img/ad.JPG">
+        </div>
+    </section>
+    <!-- /#page-content-wrapper -->
+    <br>
 
-   
+
+
+
     <!-- /#wrapper -->
 
     <!-- Bootstrap core JavaScript -->
@@ -135,32 +143,39 @@
     <script src="/vendor/bootstrap/js/common-scripts.js"></script>
     <!-- Custom scripts for this page-->
     <script src="/js/sb-admin-datatables.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
+    <script src="/firebase/firebase.js"></script>
+    <script src="/firebase/firebase_use.js"></script>
     <!-- Channel Plugin Scripts -->
-<script>
-  window.channelPluginSettings = {
-    "plugin_id": "73160b9b-184d-4f6f-a0b0-4f758715165c"
-  };
-  (function() {
-    var node = document.createElement('div');
-    node.id = 'ch-plugin';
-    document.body.appendChild(node);
-    var async_load = function() {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-      s.charset = 'UTF-8';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    };
-    if (window.attachEvent) {
-      window.attachEvent('onload', async_load);
-    } else {
-      window.addEventListener('load', async_load, false);
-    }
-  })();
-</script>
-<!-- End Channel Plugin -->
+    <script>
+        window.channelPluginSettings = {
+            "plugin_id": "73160b9b-184d-4f6f-a0b0-4f758715165c"
+        };
+        (function() {
+            var node = document.createElement('div');
+            node.id = 'ch-plugin';
+            document.body.appendChild(node);
+            var async_load = function() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+                s.charset = 'UTF-8';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            };
+            if (window.attachEvent) {
+                window.attachEvent('onload', async_load);
+            } else {
+                window.addEventListener('load', async_load, false);
+            }
+        })();
+    </script>
+    <!-- End Channel Plugin -->
 
 </body>
 

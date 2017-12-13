@@ -31,13 +31,13 @@
             <div id="sidebar" class="nav-collapse">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <h3 class="centered" style="color:bisque">방방곡곡</h3>
-                 <li class="mt">
+                    <li class="mt">
                         <a href="/">
                             <i class="fa fa-dashboard" style="color:#20B38E"></i>
                             <span style="color:#20B38E">홈화면</span>
                         </a>
                     </li>
-                     <li class="sub-menu">
+                    <li class="sub-menu">
                         <a href="/review" style="color:yellow">
                             <i class="fa fa-tasks" style="color:yellow"></i>
                             <span>공지사항</span>
@@ -59,6 +59,12 @@
                         <a href="/review" style="color:darkseagreen">
                             <i class="fa fa-tasks" style="color:darkseagreen"></i>
                             <span>후기 남기기</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" onclick="loginout(event)" style="color:cornflowerblue">
+                            <i class="fa fa-google" aria-hidden="true"></i>
+                            <span id="AUTH_STATE" class="blue-text">(인증되지 않음)</span>
                         </a>
                     </li>
                 </ul>
@@ -94,7 +100,9 @@
                                                 <%= item.Story_ID %>
                                             </td>
                                             <td style="width:50%;">
-                                                <a href="/story/<%= item.Story_ID %>"><%= item.Story_Title %></a>
+                                                <a href="/story/<%= item.Story_ID %>">
+                                                    <%= item.Story_Title %>
+                                                </a>
                                             </td>
                                             <td>
                                                 <%= item.User_Name %>
@@ -113,12 +121,12 @@
                 <!--/row -->
             </section>
             <div id="addiv"><img src="/img/ad.JPG">
-        </div>
+            </div>
         </section>
         <!-- /#page-content-wrapper -->
         <br>
-        
-        
+
+
 
     </div>
     <!-- /#wrapper -->
@@ -137,31 +145,38 @@
     <!-- Custom scripts for this page-->
     <script src="/js/sb-admin-datatables.min.js"></script>
     <!-- Channel Plugin Scripts -->
-<script>
-  window.channelPluginSettings = {
-    "plugin_id": "73160b9b-184d-4f6f-a0b0-4f758715165c"
-  };
-  (function() {
-    var node = document.createElement('div');
-    node.id = 'ch-plugin';
-    document.body.appendChild(node);
-    var async_load = function() {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-      s.charset = 'UTF-8';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    };
-    if (window.attachEvent) {
-      window.attachEvent('onload', async_load);
-    } else {
-      window.addEventListener('load', async_load, false);
-    }
-  })();
-</script>
-<!-- End Channel Plugin -->
+    <script>
+        window.channelPluginSettings = {
+            "plugin_id": "73160b9b-184d-4f6f-a0b0-4f758715165c"
+        };
+        (function() {
+            var node = document.createElement('div');
+            node.id = 'ch-plugin';
+            document.body.appendChild(node);
+            var async_load = function() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+                s.charset = 'UTF-8';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            };
+            if (window.attachEvent) {
+                window.attachEvent('onload', async_load);
+            } else {
+                window.addEventListener('load', async_load, false);
+            }
+        })();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
+    <script src="/firebase/firebase.js"></script>
+    <script src="/firebase/firebase_use.js"></script>
+    <!-- End Channel Plugin -->
 </body>
 
 </html>

@@ -4,6 +4,7 @@ const db = require(cwd+'/database/db');
 const controller=require(cwd+'/controller/controller');
 var router = express.Router();
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {res.render('index');});
 

@@ -60,6 +60,12 @@
                             <span>후기 남기기</span>
                         </a>
                 </li>
+                <li class="sub-menu">
+                    <a href="#" onclick="loginout(event)" style="color:cornflowerblue">
+                            <i class="fa fa-google" aria-hidden="true"></i>
+                            <span id="AUTH_STATE" class="blue-text">(인증되지 않음)</span>
+                        </a>
+                </li>
             </ul>
         </div>
     </aside>
@@ -97,9 +103,6 @@
     </section>
     <!-- /#page-content-wrapper -->
     <br>
-
-
-
     <!-- /#wrapper -->
 
     <!-- Bootstrap core JavaScript -->
@@ -115,6 +118,13 @@
     <script src="/vendor/bootstrap/js/common-scripts.js"></script>
     <!-- Custom scripts for this page-->
     <script src="/js/sb-admin-datatables.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
+    <script src="/firebase/firebase.js"></script>
+    <script src="/firebase/firebase_use.js"></script>
 
 </body>
 

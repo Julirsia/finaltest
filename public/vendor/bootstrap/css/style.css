@@ -27,17 +27,17 @@ ul li {
     list-style: none;
 }
 
-button.send{
-    margin-left:80%;
+button.send {
+    margin-left: 80%;
 }
 
-.text-input{
-    width:80%;
-    float:right;
+.text-input {
+    width: 80%;
+    float: right;
     border-radius: 3px;
 }
 
-textarea{
+textarea {
     border-radius: 3px;
     padding: 1rem;
 }
@@ -79,6 +79,7 @@ a:focus {
     background-color: #ddaaaa;
     color: black;
 }
+
 .content_content {
     font-size: 20px;
     height: 15rem;

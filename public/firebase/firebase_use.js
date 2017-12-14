@@ -1,4 +1,4 @@
-function loginout(event){
+function loginout(event) {
     event.preventDefault();
     if ($("#AUTH_STATE").text() == "Login") {
         var provider = new firebase.auth.GoogleAuthProvider();
@@ -9,11 +9,15 @@ function loginout(event){
             alert(error.message)
         });
     } else if ($("#AUTH_STATE").text() == "Logout") {
-        firebase.auth().signOut().then(function () {
-            alert("로그아웃 되었습니다.");
-        }).catch(function (error) {
-            alert(error.message)
-        });
+        if (confirm("정말로 로그아웃 하시겠습니까?") == false) {
+            e.preventDefault();
+        } else {
+            firebase.auth().signOut().then(function () {
+                alert("로그아웃 되었습니다.");
+            }).catch(function (error) {
+                alert(error.message)
+            });
+        }
     }
 }
 $("#BTN_GOOGLE_LOGIN").click(function () {
@@ -26,11 +30,15 @@ $("#BTN_GOOGLE_LOGIN").click(function () {
             alert(error.message)
         });
     } else if ($("#AUTH_STATE").text() == "Logout") {
-        firebase.auth().signOut().then(function () {
-            alert("로그아웃 되었습니다.");
-        }).catch(function (error) {
-            alert(error.message)
-        });
+        if (confirm("정말로 로그아웃 하시겠습니까?") == false) {
+            e.preventDefault();
+        } else {
+            firebase.auth().signOut().then(function () {
+                alert("로그아웃 되었습니다.");
+            }).catch(function (error) {
+                alert(error.message)
+            });
+        }
     }
 });
 firebase.auth().onAuthStateChanged(function (user) {

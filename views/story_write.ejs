@@ -125,7 +125,15 @@
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
     <script src="/firebase/firebase.js"></script>
     <script src="/firebase/firebase_use.js"></script>
-
+    <script type="text/javascript">
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                $("#name").val(user.displayName);
+            } else {
+                $("#name").val("");
+            }
+        });
+    </script>
 </body>
 
 </html>

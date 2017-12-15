@@ -90,6 +90,10 @@
                             <span><%= story[0].User_Name %></span>
                         </div>
                         <div>
+                            <span> 원하는 장소 : </span>
+                            <span><%= story[0].Story_Dest %></span>
+                        </div>
+                        <div>
                             <span> 작성일 : </span>
                             <span><%=  new Date(story[0].Story_Date).toLocaleString() %></span>
                         </div>
@@ -98,7 +102,7 @@
                     <div class="content_content">
                         <%= story[0].Story_Content %>
                     </div>
-                    <form action="/story">
+                    <form action="/admin/story">
                         <input type="submit" class="send btn-lg btn-border" value="돌아가기">
                     </form>
                 </div>

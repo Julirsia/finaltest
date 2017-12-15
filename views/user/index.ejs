@@ -80,7 +80,7 @@
                     <p>저희 방방곡곡에서는 여행을 좋아하는 모험심이 가득한 크루를 모집하고 있습니다
                         <a href="https://bangbanggokgok.channel.io">여기</a> 를 눌러 크루에 지원하세요!
 
-                        <p>이번주의 여행지는 <a href="https://ko.wikipedia.org/wiki/%EB%A7%8C%EB%A6%AC%EC%9E%A5%EC%84%B1">중국 만리장성</a> 으로 떠납니다. </p>
+                        <p>이번주의 여행지는 <a href="https://ko.wikipedia.org/wiki/%EB%A7%8C%EB%A6%AC%EC%9E%A5%EC%84%B1"><%= story[0].Story_Dest %></a> 으로 떠납니다. </p>
                         <a href="#download" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
               </a>
@@ -95,7 +95,7 @@
         <div class="container">
             <div class="col-lg-8 mx-auto">
                 <h2>방방곡곡의 두번째 여행기</h2>
-                <p><a href="/story/6">부리부리마님의 사연</a>으로 선정된 여행지 입니다.</p>
+                <p><a href="/story/<%= story[0].Story_ID%>"><%= story[0].User_Name %>님의 사연</a>으로 선정된 여행지 입니다.</p>
                 <p> <a href="/main" class="btn btn-default btn-lg">방송 보러가기</a></p>
                 <a href="#contact" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>

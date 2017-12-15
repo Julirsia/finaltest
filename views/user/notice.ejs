@@ -37,7 +37,7 @@
                         </a>
                 </li>
                 <li class="sub-menu">
-                    <a href="/review" style="color:yellow">
+                    <a href="/notice" style="color:yellow">
                             <i class="fa fa-tasks" style="color:yellow"></i>
                             <span>공지사항</span>
                         </a>
@@ -74,36 +74,59 @@
     <!-- Page Content -->
     <section id="main-content">
         <section class="wrapper">
-            <div align='center'>
-                <a href="admin" class="logo"><b>후기를 작성해주세요.</b></a>
-            </div>
-            <div class="container">
-                <div class="review_contents">
-                    <form method="post">
-                        <div>
-                            <div style="margin-bottom:2%;">
-                                <label for="title">제&nbsp;&nbsp;&nbsp;목 :</label>
-                                <input class="text-input" type="text" id="title" name="title" placeholder="제목을 입력하세요">
-                            </div>
-                            <div style="margin-bottom:2%;">
-                                <label for="name">작성자 :</label>
-                                <input class="text-input" type="text" id="name" name="name" placeholder="작성자 입력">
-                            </div>
-                        </div>
-                        <div>내용</div>
-                        <textarea style="font-size:20px;" rows="15" name="content" placeholder="사연을 적어주세요!"></textarea>
-                        <button type="submit" class="send btn-lg btn-theme04 btn-border">작성 완료</button>
-                    </form>
+            <div class="container-fluid">
+                <br>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">공지사항</a>
+                    </li>
+                </ol>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% notice.forEach((item)=>{ %>
+                                    <tr class='clickable-row'>
+                                        <td style="width:13%;">
+                                            <%= item.Notice_ID %>
+                                        </td>
+                                        <td style="width:50%;">
+                                            <a href="/notice/<%= item.Notice_ID %>">
+                                                <%= item.Notice_Title %>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            관리자
+                                        </td>
+                                        <td>
+                                            <%= new Date(item.Notice_Date).toLocaleString() %>
+                                        </td>
+                                    </tr>
+                                    <%})%>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <form action="/review">
-                    <input type="submit" class="send btn-lg btn-border" value="돌아가기">
-                </form>
             </div>
+            <!--/row -->
         </section>
+        <div id="addiv"><img src="img/ad.JPG">
+        </div>
     </section>
     <!-- /#page-content-wrapper -->
-    <br>
 
+
+
+
+    <!-- /#wrapper -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
@@ -118,7 +141,6 @@
     <script src="/vendor/bootstrap/js/common-scripts.js"></script>
     <!-- Custom scripts for this page-->
     <script src="/js/sb-admin-datatables.min.js"></script>
-
     <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
@@ -126,16 +148,32 @@
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
     <script src="/firebase/firebase.js"></script>
     <script src="/firebase/firebase_use.js"></script>
-    <script type="text/javascript">
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                $("#name").val(user.displayName);
+    <!-- Channel Plugin Scripts -->
+    <script>
+        window.channelPluginSettings = {
+            "plugin_id": "73160b9b-184d-4f6f-a0b0-4f758715165c"
+        };
+        (function() {
+            var node = document.createElement('div');
+            node.id = 'ch-plugin';
+            document.body.appendChild(node);
+            var async_load = function() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+                s.charset = 'UTF-8';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            };
+            if (window.attachEvent) {
+                window.attachEvent('onload', async_load);
             } else {
-                $("#name").val("");
+                window.addEventListener('load', async_load, false);
             }
-        });
+        })();
     </script>
-
+    <!-- End Channel Plugin -->
 </body>
 
 </html>

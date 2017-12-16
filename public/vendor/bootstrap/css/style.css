@@ -32,7 +32,7 @@ button.send {
 }
 
 .text-input {
-    width: 80%;
+    width: 75%;
     float: right;
     border-radius: 3px;
 }
@@ -40,6 +40,7 @@ button.send {
 textarea {
     border-radius: 3px;
     padding: 1rem;
+    height: 20rem;
 }
 
 a,
@@ -77,6 +78,16 @@ a:focus {
     padding: 2rem;
     font-size: 1.5rem;
     background-color: #ddaaaa;
+    color: black;
+}
+
+.notice_contents {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    background-color: cornflowerblue;
     color: black;
 }
 
@@ -140,6 +151,10 @@ a:focus {
 
 .bg-theme04 {
     background-color: #ed5565;
+}
+
+.bg-theme05 {
+    background-color: chocolate;
 }
 
 /*Theme Buttons*/

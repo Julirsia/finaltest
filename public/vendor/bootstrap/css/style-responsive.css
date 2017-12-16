@@ -3,6 +3,20 @@
     .custom-bar-chart {
         margin-bottom: 40px;
     }
+    
+
+}
+
+@media (max-width: 992px) {
+    .story_contents{
+        font-size: 1rem;
+    }
+    .review_contents{
+        font-size: 1rem;
+    }
+    .notice_contents{
+        font-size: 1rem;
+    }
 
 }
 
@@ -12,8 +26,16 @@
     .custom-bar-chart {
         margin-bottom: 40px;
     }
-
-    /*chat room*/
+    
+    .card-body{
+        padding: 0;
+    }
+    .container-fluid{
+        padding: 0;
+    }
+    .text-input{
+        width: 75%;
+    }    /*chat room*/
 
 
 }
@@ -225,6 +247,42 @@
     .img-responsive {
         width: 100%;
     }
+    
+    .card-body{
+        padding: 0;
+    }
+    .container-fluid{
+        padding: 0;
+    }
+    
+    table{
+        table-layout: fixed;
+        font-size: 0.8rem;
+    }
+    .dataTables_filter{
+        float: right;
+    }
+    .dataTables_length{
+        float: left;
+    }
+    .length{
+        width: 50%;
+    }
+    .filter{
+        width: 50%;
+    }
+    .story_contents{
+        font-size: 0.8rem;
+    }
+    .review_contents{
+        font-size: 0.8rem;
+    }
+    .notice_contents{
+        font-size: 0.8rem;
+    }
+    .text-write{
+        height: 16rem;    
+    }
 
 }
 
@@ -251,7 +309,47 @@
         background-color: #ccc;
         border-color:#ccc ;
     }
-
+    .card-body{
+        padding: 0;
+    }
+    .container-fluid{
+        padding: 0;
+    }
+    
+    table{
+        table-layout: fixed;
+        font-size: 0.6rem;
+    }
+    .dataTables_filter{
+        float: right;
+    }
+    .dataTables_length{
+        float: left;
+    }
+    .length{
+        width: 50%;
+    }
+    .filter{
+        width: 50%;
+    }
+    .story_contents{
+        font-size: 0.6rem;
+    }
+    .review_contents{
+        font-size: 0.6rem;
+    }
+    .notice_contents{
+        font-size: 0.6rem;
+    }
+    .text-input{
+        width: 70%;
+    }        
+    a.logo{
+        font-size: 2rem;
+    }
+    .text-write{
+        height: 11rem;    
+    }
 }
 
 @media (max-width:320px) {
@@ -286,6 +384,36 @@
     .cmt-form {
         display: inline-block;
         width: 75%;
+    }
+    
+    .card-body{
+        padding: 0;
+    }
+    .container-fluid{
+        padding: 0;
+    }
+    
+    table{
+        table-layout: fixed;
+        font-size: 0.5rem;
+    }
+    .dataTables_filter{
+        float: right;
+    }
+    .length{
+        width: 50%;
+    }
+    .filter{
+        width: 50%;
+    }
+    a.logo{
+        font-size: 2rem;
+    }
+    .text-input{
+        width: 70%;
+    }    
+    .text-write{
+        height: 10rem;    
     }
 
 }

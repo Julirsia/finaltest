@@ -74,8 +74,16 @@ textarea{
     padding-bottom: 56.25%
 }
 #addiv {
-     position: relative; 
+    position: relative;
+    width: 100%;
+    height: auto;
 }
+
+#addiv >img{
+    width: 100%;
+    height: auto;
+}
+
 #page-content-wrapper iframe{
  position: absolute;
     width: 100%;

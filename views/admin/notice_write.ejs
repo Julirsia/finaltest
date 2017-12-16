@@ -75,10 +75,10 @@
     <section id="main-content">
         <section class="wrapper">
             <div align='center'>
-                <a href="admin" class="logo"><b>공자사항 작성하기.(관리자)</b></a>
+                <a href="admin" class="logo"><b>공지사항 작성하기.(관리자)</b></a>
             </div>
             <div class="container">
-                <div class="review_contents">
+                <div class="notice_contents">
                     <form method="post">
                         <div>
                             <div style="margin-bottom:2%;">
@@ -91,11 +91,11 @@
                             </div>
                         </div>
                         <div>내용</div>
-                        <textarea style="font-size:20px;" rows="15" name="content" placeholder="공지사항을 적어주세요!"></textarea>
-                        <button type="submit" class="send btn-lg btn-theme04 btn-border">작성 완료</button>
+                        <textarea class="text-write" style="font-size:20px;" rows="15" name="content" placeholder="공지사항을 적어주세요!"></textarea>
+                        <button type="submit" class="btn-lg btn-theme btn-border">작성 완료</button>
                     </form>
                 </div>
-                <form action="/review">
+                <form action="/admin/notice">
                     <input type="submit" class="send btn-lg btn-border" value="돌아가기">
                 </form>
             </div>

@@ -23,9 +23,12 @@ router.get('/notice/:id',controller.notice_view);
 router.get('/notice_write',function(req,res,next){res.render('admin/notice_write');});
 router.post('/notice_write',controller.notice_write);
 
+//후기, 사연, 공지사항 리스트에서 삭제버튼 클릭시 포스트 방식으로 ID값을 넘겨준것을 받는다.
 router.post('/review',controller.review_delete);
 router.post('/story',controller.story_delete);
+router.post('/notice',controller.notice_delete);
 
+//사연 채택 시 /story/selet/:id라는 url에 post방식으로 값을 넘긴다.
 router.post('/story/select/:id',controller.story_select);
 
 module.exports = router;

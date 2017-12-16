@@ -99,3 +99,12 @@ exports.notice_write=(req,res)=>{
     res.redirect('/admin/notice')
   });
 };
+
+exports.notice_delete=(req,res)=>{
+  var id = req.body.id;
+  console.log(id);
+  db.query('delete from notice where Notice_ID = ?',[id],(err)=>{
+    if(err) console.log(err);
+    res.redirect('/admin/notice');
+  });
+};

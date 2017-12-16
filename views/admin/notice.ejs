@@ -90,6 +90,7 @@
                                     <th>제목</th>
                                     <th>작성자</th>
                                     <th>등록일</th>
+                                    <th>삭제</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,6 +109,12 @@
                                         </td>
                                         <td>
                                             <%= new Date(item.Notice_Date).toLocaleString() %>
+                                        </td>
+                                        <td>
+                                            <form method="post">
+                                                <input type="hidden" name="id" value="<%= item.Notice_ID %>">
+                                                <input type="submit" value="삭제">
+                                            </form>
                                         </td>
                                     </tr>
                                     <%})%>

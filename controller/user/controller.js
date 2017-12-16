@@ -87,6 +87,6 @@ exports.notice_view=(req,res)=>{
   console.log(id);
   db.query('select * from notice where Notice_ID = ?',[id],(err,results)=>{
     if(err) console.log(err);
-    res.render('user/review_content',{review:results});
+    res.render('user/notice_content',{notice:results});
   });
 };

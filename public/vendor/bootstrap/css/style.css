@@ -37,10 +37,13 @@ button.send {
     border-radius: 3px;
 }
 
+.text-write{
+    height: 20rem;
+}
+
 textarea {
     border-radius: 3px;
     padding: 1rem;
-    height: 20rem;
 }
 
 a,

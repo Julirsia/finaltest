@@ -21,7 +21,7 @@ router.get('/notice/:id',controller.notice_view);
 //관리자가 공지사항을 작성할때 get으로 받으면 화면을 뿌려주고, 
 //post로 받으면 controller 외부모듈 함수를 이용해서 디비에 값을 넣어준다.
 router.get('/notice_write',function(req,res,next){res.render('admin/notice_write');});
-router.post('/notice_write',controller.review_write);
+router.post('/notice_write',controller.notice_write);
 
 router.post('/review',controller.review_delete);
 router.post('/story',controller.story_delete);

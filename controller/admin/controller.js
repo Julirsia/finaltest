@@ -86,12 +86,12 @@ exports.notice_view=(req,res)=>{
   console.log(id);
   db.query('select * from notice where Notice_ID = ?',[id],(err,results)=>{
     if(err) console.log(err);
-    res.render('admin/review_content',{review:results});
+    res.render('admin/notice_content',{notice:results});
   });
 };
 
 //공지사항 작성페이지에서 ejs에 넘어온 값을 받아서 디비에 넣어준다.
-exports.review_write=(req,res)=>{
+exports.notice_write=(req,res)=>{
   var title = req.body.title;
   var content = req.body.content;
   db.query('Insert into notice(Notice_Title,Notice_Content) values (?,?)',[title,content],(err,results)=>{

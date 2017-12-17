@@ -93,6 +93,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                               <!-- controller.js에서 result값들을 notice로 받아옴(list형태) -->
                                 <% notice.forEach((item)=>{ %>
                                     <tr class='clickable-row'>
                                         <td style="width:13%;">
@@ -148,32 +149,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
     <script src="/firebase/firebase.js"></script>
     <script src="/firebase/firebase_use.js"></script>
-    <!-- Channel Plugin Scripts -->
-    <script>
-        window.channelPluginSettings = {
-            "plugin_id": "73160b9b-184d-4f6f-a0b0-4f758715165c"
-        };
-        (function() {
-            var node = document.createElement('div');
-            node.id = 'ch-plugin';
-            document.body.appendChild(node);
-            var async_load = function() {
-                var s = document.createElement('script');
-                s.type = 'text/javascript';
-                s.async = true;
-                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-                s.charset = 'UTF-8';
-                var x = document.getElementsByTagName('script')[0];
-                x.parentNode.insertBefore(s, x);
-            };
-            if (window.attachEvent) {
-                window.attachEvent('onload', async_load);
-            } else {
-                window.addEventListener('load', async_load, false);
-            }
-        })();
-    </script>
-    <!-- End Channel Plugin -->
+
 </body>
 
 </html>

@@ -20,7 +20,7 @@ exports.story_view=(req,res)=>{
     res.render('admin/story_content',{story:results});
   });
 };
-
+//사연 리스트에서 사연을 삭제하는 코드
 exports.story_delete=(req,res)=>{
   var id = req.body.id;
   console.log(id);
@@ -29,7 +29,7 @@ exports.story_delete=(req,res)=>{
     res.redirect('/admin/story');
   });
 };
-
+//사연 리스트에서 사연을 채택하는 코드
 exports.story_select=(req,res)=>{
   var id = req.body.select_id;
   console.log(id);

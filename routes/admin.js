@@ -4,7 +4,7 @@ const db = require(cwd+'/database/db');
 const controller=require(cwd+'/controller/admin/controller');
 var router = express.Router();
 
-/* GET users listing. */
+
 router.get('/', function(req, res, next) {res.render('admin/index');});
 router.get('/main', function(req, res, next) {res.render('admin/main');});
 

@@ -17,6 +17,9 @@
     .notice_contents{
         font-size: 1rem;
     }
+    .content_content{
+        font-size: 1rem;
+    }
 
 }
 
@@ -283,7 +286,9 @@
     .text-write{
         height: 16rem;    
     }
-
+    .content_content{
+        font-size: 0.8rem;
+    }
 }
 
 
@@ -349,6 +354,9 @@
     }
     .text-write{
         height: 11rem;    
+    }
+    .content_content{
+        font-size: 0.6rem;
     }
 }
 
